@@ -28,103 +28,55 @@
 	/* 1 a  |  1 b |  1 c 
      2 a  |  2 b |  2 c 
 	   3 a  |  3 b |  3 c */
-	   
+
 /*Styling to create large letters*/
 .box{
 	font-size: 8.5em;
 	text-align: center;
+	/*dimensions*/
+	width: 33%;
+	height: 150px;
+	/*float and display*/
+	float: left;
+	display: inline-block;
 }
 /*Styling to create the board's borders*/
 .one.a {
 	/*borders*/
 	border-right: solid white 5px;
 	border-bottom: solid white 5px;
-	/*dimensions*/
-	width: 33%;
-	height: 150px;
-	/*float and display*/
-	float: left;
-	display: inline-block;
 }
 .one.b {
 	/*borders*/
 	border-bottom: solid white 5px;
-	/*dimensions*/
-	width: 33%;
-	height: 150px;
-	/*float and display*/
-	float: left;
-	display: inline-block;
 }
 .one.c {
 	/*borders*/
 	border-left: solid white 5px;
 	border-bottom: solid white 5px;
-	/*dimensions*/
-	width: 33%;
-	height: 150px;
-	/*float and display*/
-	float: left;
-	display: inline-block;
 }
 .two.a {
 	/*borders*/
 	border-right: solid white 5px;
-	/*dimensions*/
-	width: 33%;
-	height: 150px;
-	/*float and display*/
-	float: left;
-	display: inline-block;
 }
 .two.b {
 	/*no borders*/
-	/*dimensions*/
-	width: 33%;
-	height: 150px;
-	/*float and display*/
-	float: left;
-	display: inline-block;
 }
 .two.c {
 	/*no borders*/
 	border-left: solid white 5px;
-	/*dimensions*/
-	width: 33%;
-	height: 150px;
-	/*float and display*/
-	float: left;
-	display: inline-block;
 }
 .three.a {
 	/*borders*/
 	border-right: solid white 5px;
 	border-top: solid white 5px;
-	/*dimensions*/
-	width: 33%;
-	height: 150px;
-	/*float and display*/
-	float: left;
-	display: inline-block;
 }
 .three.b {
 	/*no borders*/
 	border-top: solid white 5px;
-	/*dimensions*/
-	width: 33%;
-	height: 150px;
-	/*float and display*/
-	float: left;
-	display: inline-block;
 }
 .three.c {
 	/*borders*/
 	border-left: solid white 5px;
 	border-top: solid white 5px;
-	/*dimensions*/
-	width: 33%;
-	height: 150px;
-	/*float and display*/
-	float: left;
-	display: inline-block;
 }
