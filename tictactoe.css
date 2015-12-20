@@ -1,29 +1,63 @@
 /*Imported Roboto font*/
 @import url(https://fonts.googleapis.com/css?family=Roboto:400,900,100);
 
-* {
+*{
 	/*set background color*/
 	background-color: black;
 	/*Use Roboto throughout; only adjust boldness locally*/
 	font-family: "Roboto", "Helvetica", sans-serif;
-	color: white;
+	color: #FAFAFA;
 	/*adjust border sizing*/
 	box-sizing: border-box;
 	/*align text in center throughout*/
 	text-align: center;
 }
-.player_alerts{
-	margin: 50px auto 35px auto;
+.opening{
+	width: 100%;
+	height: 785px;
+	background-color: #757575;
+	font-weight: lighter;
+}
+.cage{
+	display: inline-block;
+	height: 5em;
+	border: none;
+	border-radius: none;
+}
+img.opening{
+	width: 35%;
+	height: 500px;
+	margin: 100px auto 40px auto;
+	display: inline-block;
+	animation: bounceIn 1s;
+}
+.button {
+	top: 50%;
+	left: 50%;
 	background-color: black;
-	color: gray;
-	width: 300px;
-	height: 1em;
-	font-size: 3.5em;
+	border-radius:28px;
+	font-weight: normal;
+	/*border: 1px solid white;*/
+	display:inline-block;
+	color: white;
+	padding:16px 50px;
+	margin: 0px 5px;
+}
+.button:hover {
+	background-color: #616161;
+	animation: bounceIn 1s;
+}
+.button:active {
+	top: 1px;
 }
 #body-container{
-	width: 50%;
-	height: 50%;
-	margin: 0 auto;
+	width: 45%;
+	margin: 30px auto 15px auto;
+}
+.timer{
+	font-size: 10em;
+	animation: bounceIn 1s;
+
 }
 	/* 1 a  |  1 b |  1 c 
      2 a  |  2 b |  2 c 
@@ -31,52 +65,85 @@
 
 /*Styling to create large letters*/
 .box{
-	font-size: 8.5em;
+	color: black;
 	text-align: center;
 	/*dimensions*/
 	width: 33%;
-	height: 150px;
+	height: 200px;
 	/*float and display*/
 	float: left;
 	display: inline-block;
 }
+.x{
+	background-image: url(/img/x.png);
+	background-size: 60%;
+	background-repeat: no-repeat;
+	background-position: center;
+	animation: bounceIn .1s ease-in;
+}
+.o{
+	background-image: url(/img/o.png);
+	background-size: 60%;
+	background-repeat: no-repeat;
+	background-position: center;
+	animation: bounceIn .1s ease-in;
+}
 /*Styling to create the board's borders*/
 .one.a {
 	/*borders*/
-	border-right: solid white 5px;
-	border-bottom: solid white 5px;
+	border-right: solid white 2px;
+	border-bottom: solid white 2px;
 }
 .one.b {
 	/*borders*/
-	border-bottom: solid white 5px;
+	border-bottom: solid white 2px;
 }
 .one.c {
 	/*borders*/
-	border-left: solid white 5px;
-	border-bottom: solid white 5px;
+	border-left: solid white 2px;
+	border-bottom: solid white 2px;
 }
 .two.a {
 	/*borders*/
-	border-right: solid white 5px;
+	border-right: solid white 2px;
 }
 .two.b {
 	/*no borders*/
 }
 .two.c {
 	/*no borders*/
-	border-left: solid white 5px;
+	border-left: solid white 2px;
 }
 .three.a {
 	/*borders*/
-	border-right: solid white 5px;
-	border-top: solid white 5px;
+	border-right: solid white 2px;
+	border-top: solid white 2px;
 }
 .three.b {
 	/*no borders*/
-	border-top: solid white 5px;
+	border-top: solid white 2px;
 }
 .three.c {
 	/*borders*/
-	border-left: solid white 5px;
-	border-top: solid white 5px;
+	border-left: solid white 2px;
+	border-top: solid white 2px;
 }
+.timer{
+	display: inline-block;
+	padding-top: 50px;
+	top: 50%;
+	left: 50%;
+	font-size: 3.5em;
+	font-weight: lighter;
+}
+/*Animations*/
+@keyframes bounceIn {
+  0%   {background-size: 50%;, opacity: 1}
+  25%  {background-size: 75%;, opacity: 1}
+  50%  {background-size: 85%;, opacity: 1}
+  75%  {background-size: 80%;, opacity: 1}
+  100% {background-size: 75%;, opacity: 1}
+}
+
+
+
