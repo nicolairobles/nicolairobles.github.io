@@ -202,64 +202,64 @@
 	var blockPosition;
 	var checkIfAlmostVerticalWinner = function(){
 		//first column
-		if(gameBoard[0][0] === gameBoard[1][0] && gameBoard[1][0] != null && gameBoard[2][0] === null){
+		if(gameBoard[0][0] === gameBoard[1][0] && gameBoard[1][0] != null && gameBoard[2][0] === null && box3A.hasClass("o") === false){
 				blockPosition = box3A;
-		} else if (gameBoard[0][0] === gameBoard[2][0] && gameBoard[2][0] != null && gameBoard[1][0] === null){
+		} else if (gameBoard[0][0] === gameBoard[2][0] && gameBoard[2][0] != null && gameBoard[1][0] === null && box2A.hasClass("o") === false){
 			blockPosition = box2A;
-		} else if (gameBoard[1][0] === gameBoard[2][0] && gameBoard[2][0] != null && gameBoard[0][0] === null){
+		} else if (gameBoard[1][0] === gameBoard[2][0] && gameBoard[2][0] != null && gameBoard[0][0] === null && box1A.hasClass("o") === false){
 			blockPosition = box1A;
 		} 		//second column
-		else if(gameBoard[0][1] === gameBoard[1][1] && gameBoard[1][1] != null && gameBoard[2][1] === null){
+		else if(gameBoard[0][1] === gameBoard[1][1] && gameBoard[1][1] != null && gameBoard[2][1] === null && box3B.hasClass("o") === false){
 				blockPosition = box3B;
-		} else if (gameBoard[0][1] === gameBoard[2][1] && gameBoard[2][1] != null && gameBoard[1][1] === null){
+		} else if (gameBoard[0][1] === gameBoard[2][1] && gameBoard[2][1] != null && gameBoard[1][1] === null && box2B.hasClass("o") === false){
 			blockPosition = box2B;
-		} else if (gameBoard[1][1] === gameBoard[2][1] && gameBoard[2][1] != null && gameBoard[0][1] === null){
+		} else if (gameBoard[1][1] === gameBoard[2][1] && gameBoard[2][1] != null && gameBoard[0][1] === null && box1B.hasClass("o") === false){
 			blockPosition = box1B;
 		}				//third column
-		else if(gameBoard[0][2] === gameBoard[1][2] && gameBoard[1][2] != null && gameBoard[2][2] === null){
+		else if(gameBoard[0][2] === gameBoard[1][2] && gameBoard[1][2] != null && gameBoard[2][2] === null && box3C.hasClass("o") === false){
 				blockPosition = box3C;
-		} else if (gameBoard[0][2] === gameBoard[2][2] && gameBoard[2][2] != null && gameBoard[1][2] === null){
+		} else if (gameBoard[0][2] === gameBoard[2][2] && gameBoard[2][2] != null && gameBoard[1][2] === null && box2C.hasClass("o") === false){
 			blockPosition = box2C;
-		} else if (gameBoard[1][2] === gameBoard[2][2] && gameBoard[2][2] != null && gameBoard[0][2] === null){
+		} else if (gameBoard[1][2] === gameBoard[2][2] && gameBoard[2][2] != null && gameBoard[0][2] === null && box1C.hasClass("o") === false){
 			blockPosition = box1C;
 		}
 	}
 	var checkIfAlmostHorizontalWinner = function(){
 		//first row
-		if(gameBoard[0][0] === gameBoard[0][1] && gameBoard[0][1] != null && gameBoard[0][2] === null){
+		if(gameBoard[0][0] === gameBoard[0][1] && gameBoard[0][1] != null && gameBoard[0][2] === null && box1C.hasClass("o") === false){
 			blockPosition = box1C;
-		} else if (gameBoard[0][0] === gameBoard[0][2] && gameBoard[0][2] != null && gameBoard[0][1] === null){
+		} else if (gameBoard[0][0] === gameBoard[0][2] && gameBoard[0][2] != null && gameBoard[0][1] === null && box1B.hasClass("o") === false){
 			blockPosition = box1B;
-		} else if (gameBoard[0][1] === gameBoard[0][2] && gameBoard[0][2] != null && gameBoard[0][0] === null){
+		} else if (gameBoard[0][1] === gameBoard[0][2] && gameBoard[0][2] != null && gameBoard[0][0] === null && box1A.hasClass("o") === false){
 			blockPosition = box1A;
 		} 		//second row
-		else if(gameBoard[1][0] === gameBoard[1][1] && gameBoard[1][1] != null && gameBoard[1][2] === null){
+		else if(gameBoard[1][0] === gameBoard[1][1] && gameBoard[1][1] != null && gameBoard[1][2] === null && box2C.hasClass("o") === false){
 			blockPosition = box2C;
-		} else if (gameBoard[1][0] === gameBoard[1][2] && gameBoard[1][2] != null && gameBoard[1][1] === null){
+		} else if (gameBoard[1][0] === gameBoard[1][2] && gameBoard[1][2] != null && gameBoard[1][1] === null && box2B.hasClass("o") === false){
 			blockPosition = box2B;
-		} else if (gameBoard[1][1] === gameBoard[1][2] && gameBoard[1][2] != null && gameBoard[1][0] === null){
+		} else if (gameBoard[1][1] === gameBoard[1][2] && gameBoard[1][2] != null && gameBoard[1][0] === null && box2A.hasClass("o") === false){
 			blockPosition = box2A;
 		} 		//third row
-		else if(gameBoard[2][0] === gameBoard[2][1] && gameBoard[2][1] != null && gameBoard[2][2] === null){
+		else if(gameBoard[2][0] === gameBoard[2][1] && gameBoard[2][1] != null && gameBoard[2][2] === null && box3C.hasClass("o") === false){
 			blockPosition = box3C;
-		} else if (gameBoard[2][0] === gameBoard[2][2] && gameBoard[2][2] != null && gameBoard[2][1] === null){
+		} else if (gameBoard[2][0] === gameBoard[2][2] && gameBoard[2][2] != null && gameBoard[2][1] === null && box3B.hasClass("o") === false){
 			blockPosition = box3B;
-		} else if (gameBoard[2][1] === gameBoard[2][2] && gameBoard[2][2] != null && gameBoard[2][0] === null){
+		} else if (gameBoard[2][1] === gameBoard[2][2] && gameBoard[2][2] != null && gameBoard[2][0] === null && box3A.hasClass("o") === false){
 			blockPosition = box3A;
 		}
 	}
 	var checkIfAlmostDiagonalWinner = function(){
-		if(gameBoard[2][0] === gameBoard[1][1] && gameBoard[1][1] != null && gameBoard[0][2] === null){
+		if(gameBoard[2][0] === gameBoard[1][1] && gameBoard[1][1] != null && gameBoard[0][2] === null && box1C.hasClass("o") === false){
 			blockPosition = box1C;
-		} else if (gameBoard[2][0] === gameBoard[0][2] && gameBoard[0][2] != null && gameBoard[1][1] === null){
+		} else if (gameBoard[2][0] === gameBoard[0][2] && gameBoard[0][2] != null && gameBoard[1][1] === null && box2B.hasClass("o") === false){
 			blockPosition = box2B
-		} else if (gameBoard[1][1] === gameBoard[0][2] && gameBoard[0][2] != null & gameBoard[2][0] === null){
+		} else if (gameBoard[1][1] === gameBoard[0][2] && gameBoard[0][2] != null & gameBoard[2][0] === null && box3A.hasClass("o") === false){
 			blockPosition = box3A;
-		} else if(gameBoard[0][0] === gameBoard[1][1] && gameBoard[1][1] != null && gameBoard[2][2] === null){
+		} else if(gameBoard[0][0] === gameBoard[1][1] && gameBoard[1][1] != null && gameBoard[2][2] === null && box3C.hasClass("o") === false){
 			blockPosition = box3C;
-		} else if (gameBoard[0][0] === gameBoard[2][2] && gameBoard[2][2] != null && gameBoard[1][1] === null){
+		} else if (gameBoard[0][0] === gameBoard[2][2] && gameBoard[2][2] != null && gameBoard[1][1] === null && box2B.hasClass("o") === false){
 			blockPosition = box2B;
-		} else if (gameBoard[1][1] === gameBoard[2][2] && gameBoard[2][2] != null & gameBoard[0][0] === null){
+		} else if (gameBoard[1][1] === gameBoard[2][2] && gameBoard[2][2] != null & gameBoard[0][0] === null && box1A.hasClass("o") === false){
 			blockPosition = box1A;
 		}
 	}
@@ -271,20 +271,44 @@
 	var computerMove = function(){
 		console.log("computer move")
 		if(marks === 1){
-			if(box2B.hasClass("x") != true){
+			if(box2B.hasClass("x") != true && box2B.hasClass("o") != true){
 				makeMove(box2B);
-			} else if (box1A.hasClass("x") != true){
+			} else if (box1A.hasClass("x") != true && box1A.hasClass("o") != true ){
 				makeMove(box1A);
-			} else if (box1C.hasClass("x") != true){
+			} else if (box1C.hasClass("x") != true && box1C.hasClass("o") != true){
 				makeMove(box1C);
-			} else if (box3A.hasClass("x") != true){
+			} else if (box3A.hasClass("x") != true && box3A.hasClass("o") != true){
 				makeMove(box3A);
-			} else if (box3C.hasClass("x") != true){
+			} else if (box3C.hasClass("x") != true && box3C.hasClass("o") != true){
 				makeMove(box3C);
 			}
 		} else if (marks > 1){
 			checkIfAlmostWinner();
-			makeMove(blockPosition);
+			if(blockPosition === undefined){
+				if (box1A.hasClass("x") != true && box1A.hasClass("o") != true){
+				makeMove(box1A);
+				} else if (box1C.hasClass("x") != true && box1C.hasClass("o") != true){
+					makeMove(box1C);
+				} else if (box3A.hasClass("x") != true && box3A.hasClass("o") != true){
+					makeMove(box3A);
+				} else if (box3C.hasClass("x") != true && box3C.hasClass("o") != true){
+					makeMove(box3C);
+				}
+			} else if (blockPosition.hasClass("x") != true && blockPosition.hasClass("o") != true){
+				makeMove(blockPosition);
+			} else{
+				if(box2B.hasClass("x") != true && box2B.hasClass("o") != true){
+					makeMove(box2B);
+				} else if (box1A.hasClass("x") != true && box1A.hasClass("o") != true ){
+					makeMove(box1A);
+				} else if (box1C.hasClass("x") != true && box1C.hasClass("o") != true){
+					makeMove(box1C);
+				} else if (box3A.hasClass("x") != true && box3A.hasClass("o") != true){
+					makeMove(box3A);
+				} else if (box3C.hasClass("x") != true && box3C.hasClass("o") != true){
+					makeMove(box3C);
+				}
+			}
 		}
 	}
 // Event listeners 
