@@ -14,29 +14,15 @@
 	  timerIdStart = setInterval(countDown, 500);
 	});
 //Computer-Human Game
+	var computerGame;
 	$(".play-computer").on("click", function(){
+		computerGame = true;
 		$(".opening img").hide();
 		$(".button").hide();
 		$(".opening").hide( "puff", 250 );
 	  game_start.play();
 	  timerIdStart = setInterval(countDown, 500);
 	  console.log("computer move")
-		if(marks === 1){
-			if(box2B != "x"){
-				makeMove(box2B);
-			} else if (box1A != "x"){
-				makeMove(box1A);
-			} else if (box1C != "x"){
-				makeMove(box1C);
-			} else if (box3A != "x"){
-				makeMove(box3A);
-			} else if (box3C != "x"){
-				makeMove(box3C);
-			}
-		} else if (marks > 2){
-			checkIfAlmostWinner();
-			makeMove(blockPosition);
-		}
 	});
 //Set up variables
 	/* Tic Tac Toe Board Structure
@@ -213,87 +199,90 @@
 		checkIfWinner();
 		switchPlayer();
 	}
+	var blockPosition;
 	var checkIfAlmostVerticalWinner = function(){
-		for (var i = 0; i < 3; i++ ){
-			//Check first two first
-			if(gameBoard[0][i] === gameBoard[1][i] && gameBoard[1][i] != null){
-				var blockPosition = box3A;
-				makeMark(blockPosition);
-				console.log("block position: [2]["+i+"]")
-				//Check corners first
-			} else if (gameBoard[0][i] === gameBoard[2][i] && gameBoard[2][i] != null){
-				var blockPosition = box2A;
-				makeMark(blockPosition);
-				console.log("block position: [1]["+i+"]")
-				//Check last two first
-			} else if (gameBoard[1][i] === gameBoard[2][i] && gameBoard[2][i] != null){
-				var blockPosition = box1A;
-				makeMark(blockPosition);
-				console.log("block position: [0]["+i+"]")
-			}
+		//first column
+		if(gameBoard[0][0] === gameBoard[1][0] && gameBoard[1][0] != null && gameBoard[2][0] === null){
+				blockPosition = box3A;
+		} else if (gameBoard[0][0] === gameBoard[2][0] && gameBoard[2][0] != null && gameBoard[1][0] === null){
+			blockPosition = box2A;
+		} else if (gameBoard[1][0] === gameBoard[2][0] && gameBoard[2][0] != null && gameBoard[0][0] === null){
+			blockPosition = box1A;
+		} 		//second column
+		else if(gameBoard[0][1] === gameBoard[1][1] && gameBoard[1][1] != null && gameBoard[2][1] === null){
+				blockPosition = box3B;
+		} else if (gameBoard[0][1] === gameBoard[2][1] && gameBoard[2][1] != null && gameBoard[1][1] === null){
+			blockPosition = box2B;
+		} else if (gameBoard[1][1] === gameBoard[2][1] && gameBoard[2][1] != null && gameBoard[0][1] === null){
+			blockPosition = box1B;
+		}				//third column
+		else if(gameBoard[0][2] === gameBoard[1][2] && gameBoard[1][2] != null && gameBoard[2][2] === null){
+				blockPosition = box3C;
+		} else if (gameBoard[0][2] === gameBoard[2][2] && gameBoard[2][2] != null && gameBoard[1][2] === null){
+			blockPosition = box2C;
+		} else if (gameBoard[1][2] === gameBoard[2][2] && gameBoard[2][2] != null && gameBoard[0][2] === null){
+			blockPosition = box1C;
 		}
 	}
-
-	// var checkIfAlmostHorizontalWinner = function(){
-	// 	for (var i = 0; i < 3; i++ ){
-	// 		//Check first two first
-	// 		if(gameBoard[i][0] === gameBoard[i][1] && gameBoard[i][1] != null){
-	// 			var blockPosition = $("."+i);
-	// 			makeMark(blockPosition);
-	// 			console.log("block position:["+i+"][2]")
-	// 			//Check corners first
-	// 		} else if (gameBoard[i][0] === gameBoard[i][2] && gameBoard[i][2] != null){
-	// 			var blockPosition = box2A;
-	// 			makeMark(blockPosition);
-	// 			console.log("block position:["+i+"][2]")
-	// 			//Check last two first
-	// 		} else if (gameBoard[i][1] === gameBoard[i][2] && gameBoard[i][2] != null){
-	// 			var blockPosition = box1A;
-	// 			makeMark(blockPosition);
-	// 			console.log("block position:["+i+"][2]")
-	// 		}
-	// 	}
-	// }
-	// var checkIfAlmostDiagonalWinner = function(){
-	// 	for (var i = 0; i < 3; i++ ){
-	// 		//Check first two first
-	// 		if(gameBoard[i][0] === gameBoard[i][1] && gameBoard[i][1] != null){
-	// 			var blockPosition = box1C;
-	// 			makeMark(blockPosition);
-	// 			console.log("block position:["+i+"][2]")
-	// 			//Check corners first
-	// 		} else if (gameBoard[0][i] === gameBoard[2][i] && gameBoard[2][i] != null){
-	// 			var blockPosition = box2A;
-	// 			makeMark(blockPosition);
-	// 			console.log("block position: [1]["+i+"]")
-	// 			//Check last two first
-	// 		} else if (gameBoard[1][i] === gameBoard[2][i] && gameBoard[2][i] != null){
-	// 			var blockPosition = box1A;
-	// 			makeMark(blockPosition);
-	// 			console.log("block position: [0]["+i+"]")
-	// 		}
-	// 	}
-	// }
+	var checkIfAlmostHorizontalWinner = function(){
+		//first row
+		if(gameBoard[0][0] === gameBoard[0][1] && gameBoard[0][1] != null && gameBoard[0][2] === null){
+			blockPosition = box1C;
+		} else if (gameBoard[0][0] === gameBoard[0][2] && gameBoard[0][2] != null && gameBoard[0][1] === null){
+			blockPosition = box1B;
+		} else if (gameBoard[0][1] === gameBoard[0][2] && gameBoard[0][2] != null && gameBoard[0][0] === null){
+			blockPosition = box1A;
+		} 		//second row
+		else if(gameBoard[1][0] === gameBoard[1][1] && gameBoard[1][1] != null && gameBoard[1][2] === null){
+			blockPosition = box2C;
+		} else if (gameBoard[1][0] === gameBoard[1][2] && gameBoard[1][2] != null && gameBoard[1][1] === null){
+			blockPosition = box2B;
+		} else if (gameBoard[1][1] === gameBoard[1][2] && gameBoard[1][2] != null && gameBoard[1][0] === null){
+			blockPosition = box2A;
+		} 		//third row
+		else if(gameBoard[2][0] === gameBoard[2][1] && gameBoard[2][1] != null && gameBoard[2][2] === null){
+			blockPosition = box3C;
+		} else if (gameBoard[2][0] === gameBoard[2][2] && gameBoard[2][2] != null && gameBoard[2][1] === null){
+			blockPosition = box3B;
+		} else if (gameBoard[2][1] === gameBoard[2][2] && gameBoard[2][2] != null && gameBoard[2][0] === null){
+			blockPosition = box3A;
+		}
+	}
+	var checkIfAlmostDiagonalWinner = function(){
+		if(gameBoard[2][0] === gameBoard[1][1] && gameBoard[1][1] != null && gameBoard[0][2] === null){
+			blockPosition = box1C;
+		} else if (gameBoard[2][0] === gameBoard[0][2] && gameBoard[0][2] != null && gameBoard[1][1] === null){
+			blockPosition = box2B
+		} else if (gameBoard[1][1] === gameBoard[0][2] && gameBoard[0][2] != null & gameBoard[2][0] === null){
+			blockPosition = box3A;
+		} else if(gameBoard[0][0] === gameBoard[1][1] && gameBoard[1][1] != null && gameBoard[2][2] === null){
+			blockPosition = box3C;
+		} else if (gameBoard[0][0] === gameBoard[2][2] && gameBoard[2][2] != null && gameBoard[1][1] === null){
+			blockPosition = box2B;
+		} else if (gameBoard[1][1] === gameBoard[2][2] && gameBoard[2][2] != null & gameBoard[0][0] === null){
+			blockPosition = box1A;
+		}
+	}
 	var checkIfAlmostWinner = function(){
 		checkIfAlmostDiagonalWinner();
 		checkIfAlmostHorizontalWinner();
-		checkIfAlmostHorizontalWinner();
+		checkIfAlmostVerticalWinner();
 	}
 	var computerMove = function(){
 		console.log("computer move")
 		if(marks === 1){
-			if(box2B != "x"){
+			if(box2B.hasClass("x") != true){
 				makeMove(box2B);
-			} else if (box1A != "x"){
+			} else if (box1A.hasClass("x") != true){
 				makeMove(box1A);
-			} else if (box1C != "x"){
+			} else if (box1C.hasClass("x") != true){
 				makeMove(box1C);
-			} else if (box3A != "x"){
+			} else if (box3A.hasClass("x") != true){
 				makeMove(box3A);
-			} else if (box3C != "x"){
+			} else if (box3C.hasClass("x") != true){
 				makeMove(box3C);
 			}
-		} else if (marks > 2){
+		} else if (marks > 1){
 			checkIfAlmostWinner();
 			makeMove(blockPosition);
 		}
@@ -305,13 +294,18 @@
 		box.on("click", function(){
 			clearInterval(timerIdStart);
 			clearInterval(timerIdClick);
-			timer.effect("pulsate", {distance:1, times:2}, 250);
+			timer.effect("pulsate", {distance: 1, times: 2}, 250);
 			seconds = 4;
-  		timerIdClick = setInterval(countDown, 500);
+			timerIdClick = setInterval(countDown, 500);
 			makeMark(this);
 			checkLocation(this);
 			checkIfWinner();
 			switchPlayer();
+			if(computerGame === true & marks != 9){
+				setTimeout(function(){
+					computerMove();
+				}, 500)
+			}
 		})
 	};	
 // Loads event listeners once page is loaded on browser
