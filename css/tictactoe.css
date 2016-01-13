@@ -14,7 +14,7 @@
 }
 .opening{
 	width: 100%;
-	height: 785px;
+	height: 800px;
 	background-color: #757575;
 	font-weight: lighter;
 }
@@ -25,9 +25,11 @@
 	border-radius: none;
 }
 img.opening{
-	width: 35%;
-	height: 500px;
-	margin: 100px auto 40px auto;
+	width: 250px;
+	height: 250px;
+	min-width: 40vw;
+	min-height: 40vw;
+	margin: 50px auto 40px auto;
 	display: inline-block;
 	animation: bounceIn 1s;
 }
@@ -40,30 +42,34 @@ img.opening{
 	/*border: 1px solid white;*/
 	display:inline-block;
 	color: white;
-	padding:16px 50px;
-	margin: 0px 5px;
+	padding:20px 55px;
+	margin: 5px 5px;
+	font-size: 1em;
 }
 .button:hover {
 	background-color: #616161;
-	animation: bounceIn 1s;
+	border: solid white 1px;
 }
 .button:active {
 	top: 1px;
 }
+#game_screen, #body-container, .box, .timer{
+	display: none;
+}
 #body-container{
-	width: 45%;
+	width: 600px;
+	height: 600px;
+	min-width: 350px;
+	min-height: 350px;
 	margin: 30px auto 15px auto;
 }
 .timer{
 	font-size: 10em;
 	animation: bounceIn 1s;
-
 }
 	/* 1 a  |  1 b |  1 c 
-     2 a  |  2 b |  2 c 
+       2 a  |  2 b |  2 c 
 	   3 a  |  3 b |  3 c */
-
-/*Styling to create large letters*/
 .box{
 	color: black;
 	text-align: center;
@@ -73,6 +79,7 @@ img.opening{
 	/*float and display*/
 	float: left;
 	display: inline-block;
+	font-size: 0px;
 }
 .x{
 	background-image: url(/img/x.png);
