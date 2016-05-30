@@ -4,14 +4,14 @@
 
 //Introduction Sequence
 	var timerIdStart;
-	var game_start = new Audio("/audio/start-round.mp3");
-	game_start.loop = true;
+	// var game_start = new Audio("/audio/start-round.mp3");
+	// game_start.loop = true;
 //2 Player Game
 	$(".two-player-game").on("click", function(){
 		$(".opening img").hide();
 		$(".button").hide();
 		$(".opening").hide( "puff", 250 );
-		game_start.play();
+		// game_start.play();
 		$("#game_screen, #body-container, .box, .timer").css("display", "inline-block");
 		timerIdStart = setInterval(countDown, 500);
 	});
@@ -22,7 +22,7 @@
 		$(".opening img").hide();
 		$(".button").hide();
 		$(".opening").hide( "puff", 250 );
-		game_start.play();
+		// game_start.play();
 		$("#game_screen, #body-container, .box, .timer").css("display", "inline-block");
 		timerIdStart = setInterval(countDown, 500);
 		console.log("computer move")
@@ -54,6 +54,23 @@
 	var oAlmostWin;
 	var xAlmostWin;
 	var winnerChosen;
+
+// Keep Score
+	var score;
+	var xScore;
+	var oScore;
+	function clickCounter() {
+    if(typeof(Storage) !== "undefined") {
+        if (localStorage.clickcount) {
+            localStorage.clickcount = Number(localStorage.clickcount)+1;
+        } else {
+            localStorage.clickcount = 1;
+        }
+        document.getElementById("result").innerHTML = "You have clicked the button " + localStorage.clickcount + " time(s).";
+    } else {
+        document.getElementById("result").innerHTML = "Sorry, your browser does not support web storage...";
+    }
+	}
 
 //Timer Implementation
 	var timer = $(".timer")
